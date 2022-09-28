@@ -21,12 +21,12 @@ typedef struct {
   QueueElement* tail;
 } Queue;
 
-int dequeue(Queue* queue, void** out);
+int queue_dequeue(Queue* queue, void** out);
 
-void enqueue(Queue* queue, void* data);
+void queue_enqueue(Queue* queue, void* data);
 
-int length(Queue* queue);
+int queue_length(Queue* queue);
 
-void* peek(Queue* queue);
+void* queue_peek(Queue* queue);
 
 Queue* make_queue();

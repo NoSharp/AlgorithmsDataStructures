@@ -1,7 +1,7 @@
 #include "stack.h"
 
 
-void push(Stack* stack, void* data){
+void stack_push(Stack* stack, void* data){
   StackItem* item = (StackItem*)malloc(sizeof(StackItem));
   item->data = data;
   StackItem* cur_head = stack->head;
@@ -11,7 +11,7 @@ void push(Stack* stack, void* data){
   stack->len++;
 }
 
-int peek(Stack* stack, void** out_data){
+int stack_peek(Stack* stack, void** out_data){
   if(stack->head == NULL || stack->len == 0){
     return STACK_LENGTH_ZERO;
   }
@@ -19,7 +19,7 @@ int peek(Stack* stack, void** out_data){
   return STACK_SUCCESS;
 }
 
-int pop(Stack* stack, void** out_data){
+int stack_pop(Stack* stack, void** out_data){
   int err = peek(stack, out_data);
   if(err > 0){
     return err;
@@ -30,7 +30,7 @@ int pop(Stack* stack, void** out_data){
   free(s_e);
 }
 
-int length(Stack* stack){
+int stack_length(Stack* stack){
   return stack->len;
 }
 

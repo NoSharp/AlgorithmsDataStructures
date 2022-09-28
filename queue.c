@@ -1,6 +1,6 @@
 #include "queue.h"
 
-int dequeue(Queue* queue, void** out){
+int queue_dequeue(Queue* queue, void** out){
   if ( queue->len == 0){
     return QUEUE_LENGTH_ZERO;
   }
@@ -14,7 +14,7 @@ int dequeue(Queue* queue, void** out){
   return QUEUE_SUCCESS;
 }
 
-void enqueue(Queue* queue, void* data){
+void queue_enqueue(Queue* queue, void* data){
   
   QueueElement* element = (QueueElement*)malloc(sizeof(QueueElement));
   element->content = data;
@@ -30,11 +30,11 @@ void enqueue(Queue* queue, void* data){
   queue->len++;
 }
 
-int length(Queue* queue){
+int queue_length(Queue* queue){
   return queue->len;
 }
 
-void* peek(Queue* queue){
+void* queue_peek(Queue* queue){
   QueueElement* head = queue->head;
   if(head == NULL || queue->len == 0){
     return NULL;

@@ -14,8 +14,8 @@ typedef struct {
 } Stack;
 
 
-void push(Stack* stack, void* data);
-int pop(Stack* stack, void** out_data);
-int peek(Stack* stack, void** out_data);
-int length(Stack* stack);
+void stack_push(Stack* stack, void* data);
+int stack_pop(Stack* stack, void** out_data);
+int stack_peek(Stack* stack, void** out_data);
+int stack_length(Stack* stack);
 Stack* make_stack();
