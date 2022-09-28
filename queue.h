@@ -1,3 +1,6 @@
+#ifndef QUEUE_H
+#define QUEUE_H
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -30,3 +33,5 @@ int queue_length(Queue* queue);
 void* queue_peek(Queue* queue);
 
 Queue* make_queue();
+
+#endif

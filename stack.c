@@ -1,5 +1,5 @@
-#include "stack.h"
 
+#include "stack.h"
 
 void stack_push(Stack* stack, void* data){
   StackItem* item = (StackItem*)malloc(sizeof(StackItem));
@@ -20,7 +20,7 @@ int stack_peek(Stack* stack, void** out_data){
 }
 
 int stack_pop(Stack* stack, void** out_data){
-  int err = peek(stack, out_data);
+  int err = stack_peek(stack, out_data);
   if(err > 0){
     return err;
   }

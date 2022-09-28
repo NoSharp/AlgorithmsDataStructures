@@ -1,3 +1,6 @@
+#ifndef STACK_H
+#define STACK_H
+
 #include <stdlib.h>
 
 #define STACK_SUCCESS 0
@@ -19,3 +22,5 @@ int stack_pop(Stack* stack, void** out_data);
 int stack_peek(Stack* stack, void** out_data);
 int stack_length(Stack* stack);
 Stack* make_stack();
+
+#endif STACK_H
